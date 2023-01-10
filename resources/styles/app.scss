@@ -1,0 +1,167 @@
+@import "reset.css";
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+
+    * {
+        transition-timing-function: linear;
+        transition: all 700ms;
+        box-sizing: border-box;
+    }
+}
+
+button, a.button {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    margin: 0;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &:hover, &:focus {
+        border-color: rgba(0, 0, 0, 0.15);
+        box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    &:active {
+        background-color: #F0F0F1;
+        border-color: rgba(0, 0, 0, 0.15);
+        box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+        color: rgba(0, 0, 0, 0.65);
+        transform: translateY(0);
+    }
+
+    &.primary {
+        background-color: teal;
+        color: white;
+    }
+
+    &.small, &.card-control {
+        font-size: 13px;
+        padding: 4px 7px;
+
+        &.delete {
+            background-color: #fc6161;
+            color: white;
+        }
+    }
+}
+
+div.form-control {
+    width: 100%;
+    margin-bottom: 25px;
+
+    .input {
+        font-size: 16px;
+        font-family: inherit;
+        padding: 0.25em 0.5em;
+        background-color: #fff;
+        border: 2px solid #eeeeee;
+        border-radius: 4px;
+        display: block;
+        width: 100%;
+    }
+    label {
+        display: block;
+    }
+}
+
+div.column {
+    width: 300px;
+    min-width: 300px;
+    max-height: 100%;
+    overflow-y: auto;
+    background-color: #eeeeee;
+    padding: 25px;
+    border: white solid 1.5px;
+    flex-basis: min-content;
+    position: relative;
+
+    .header {
+        .controls {
+            margin-top: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &:hover {
+        background-color: white;
+        cursor: pointer;
+        border-color: #eae9e9;
+
+        .title {
+            color: teal;
+        }
+
+        .cards-wrapper {
+            .card {
+                border-color: #eeeeee;
+            }
+        }
+    }
+
+    .title {
+        text-align: left;
+        margin-bottom: 7px;
+        position: sticky;
+        font-size: 19px;
+    }
+
+    .cards-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .card {
+            flex-basis: min-content;
+            padding: 25px 15px;
+            background-color: white;
+            border: white solid 1.5px;
+            margin-top: 20px;
+
+            &:hover {
+                border-color: teal;
+
+                .title {
+                    color: teal;
+                }
+            }
+
+            .title {
+                font-weight: 600;
+                font-size: 17px;
+                text-align: center;
+                color: #494949;
+            }
+
+            .description {
+                font-weight: 400;
+                font-size: 14px;
+            }
+        }
+    }
+}
